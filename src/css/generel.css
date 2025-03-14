@@ -1,6 +1,24 @@
+
+@font-face {
+  font-family: "figtree";
+  src: url("../../public/fonts/Figtree-VariableFont_wght.woff2") format("woff2"),
+    url("../../public/fonts/Figtree-VariableFont_wght.woff") format("woff"),
+    url("../../public/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --primary-color: #0076F1;
+  --secondary-color: #FE8F29;
+  --footer-color: #0F172A;
+}
+
 html,
 body {
   margin: 0;
   width: 100%;
   height: 100%;
+  font-family: "figtree",  serif;
 }
+
