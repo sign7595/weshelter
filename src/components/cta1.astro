@@ -1,0 +1,25 @@
+---
+const { button } = Astro.props;
+---
+
+<article>
+  <a href="#">{button}</a>
+</article>
+
+<style>
+  a {
+    border-radius: 20px;
+    background-color: #0076f1;
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+    margin: auto;
+  }
+
+  @media (width > 768px) {
+    a {
+      padding: 10px 30px;
+      font-size: 20px;
+    }
+  }
+</style>
