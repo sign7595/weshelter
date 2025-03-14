@@ -8,6 +8,25 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "NanumPenScript";
+  src: url("../../public/fonts/NanumPenScript-Regular.woff2") format("woff2"),
+       url("../../public/fonts/NanumPenScript-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("../../public/fonts/Anton-Regular.woff2") format("woff2"),
+       url("../../public/fonts/Anton-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   --primary-color: #0076F1;
   --secondary-color: #FE8F29;
