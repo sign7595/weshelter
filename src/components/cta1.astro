@@ -14,12 +14,20 @@ const { button } = Astro.props;
     text-decoration: none;
     padding: 5px 20px;
     margin: auto;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
   }
 
-  @media (width > 768px) {
+  @media (min-width: 768px) {
     a {
       padding: 10px 30px;
       font-size: 20px;
     }
+  }
+
+  a:hover {
+    background-color: white;
+    color: #0076f1;
+    border: 2px solid #0076f1;
   }
 </style>
