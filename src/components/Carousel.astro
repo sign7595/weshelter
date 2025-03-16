@@ -28,58 +28,56 @@ import Card from "../components/card.astro";
   if (typeof window !== "undefined") {
     let currentIndex = 0;
     const slides = Array.from(document.querySelectorAll(".carousel-slide"));
-    const totalSlides = slides.length;
+    const container = document.querySelector(".carousel-container");
 
     function updateCarousel() {
-      slides.forEach((slide, index) => {
-        (slide as HTMLElement).style.display =
-          index === currentIndex ? "block" : "none";
-      });
+      const visibleCards = window.innerWidth >= 1024 ? 4 : 1; // 4 på desktop, 1 på mobile
+      const container = document.querySelector(
+        ".carousel-container"
+      ) as HTMLElement;
+
+      if (container) {
+        container.style.transform = `translateX(-${currentIndex * (100 / visibleCards)}%)`;
+      }
     }
-    updateCarousel();
 
     document.querySelector("#prev")?.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      const visibleCards = window.innerWidth >= 1024 ? 4 : 1;
+      currentIndex = Math.max(currentIndex - visibleCards, 0);
       updateCarousel();
     });
 
     document.querySelector("#next")?.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
+      const visibleCards = window.innerWidth >= 1024 ? 4 : 1;
+      currentIndex = Math.min(
+        currentIndex + visibleCards,
+        slides.length - visibleCards
+      );
       updateCarousel();
     });
+
+    window.addEventListener("resize", updateCarousel);
+    updateCarousel();
   }
 </script>
 
 <style>
   .carousel {
+    padding-top: 2rem;
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 600px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    text-align: center;
-    min-height: 500px;
   }
 
   .carousel-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
     transition: transform 0.5s ease-in-out;
-    min-height: 500px;
-  }
-
-  #prev,
-  #next {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
+    width: 100%;
   }
 
   .carousel-slide {
@@ -88,25 +86,8 @@ import Card from "../components/card.astro";
     justify-content: center;
     align-items: center;
   }
-
-  .card {
-    width: 100%;
-    max-width: 300px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-  }
-
-  .prev,
-  .next {
+  #prev,
+  #next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -117,11 +98,23 @@ import Card from "../components/card.astro";
     z-index: 10;
   }
 
-  .prev {
-    left: 10px;
+  #prev {
+    left: 5rem;
   }
 
-  .next {
-    right: 10px;
+  #next {
+    right: 5rem;
+  }
+  @media (min-width: 1024px) {
+    .carousel-slide {
+      flex: 0 0 25%;
+    }
+    #prev {
+      left: 1rem;
+    }
+
+    #next {
+      right: 1rem;
+    }
   }
 </style>
