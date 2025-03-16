@@ -16,6 +16,14 @@ const { img, overskrift, beskrivelse } = Astro.props;
     text-align: center;
     max-width: 300px;
     margin: auto;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .card img {
+    width: auto%;
+    height: 150px;
+    object-fit: cover;
   }
 
   img {
@@ -26,10 +34,38 @@ const { img, overskrift, beskrivelse } = Astro.props;
   h3 {
     margin-top: 10px;
     font-size: 1.5rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
   }
 
   h4 {
     font-size: 1rem;
     font-weight: 300;
+    padding-inline: 1rem;
+    line-height: 1.5rem;
+  }
+
+  h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  h3:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 1.2rem;
+    }
   }
 </style>
