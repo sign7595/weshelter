@@ -3,13 +3,17 @@ import Layout from "../layouts/Layout.astro";
 import Cta1 from "../components/cta1.astro";
 import Cta2 from "../components/cta2.astro";
 import Cta3 from "../components/cta3.astro";
-
+import Slideshow from "../components/slideshow.astro";
+import Tekst from "../components/forsidetekst.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
   <header></header>
-  <main></main>
+  <main>
+    <Slideshow />
+    <Tekst />
+  </main>
   <footer></footer>
 </Layout>

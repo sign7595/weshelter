@@ -1,0 +1,96 @@
+---
+const images = [
+  "img/hero1.jpg",
+  "img/hero2.jpg",
+  "img/hero3.jpg",
+  "img/hero4.jpg",
+  "img/hero5.jpg",
+];
+---
+
+<div id="slideshow">
+  {
+    images.map((src, index) => (
+      <div class="slide" data-index={index}>
+        <img src={src} alt={`Slide ${index + 1}`} class="slide-image" />
+        <div class="slide-text">Bliv frivillig</div>
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    let currentImage = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function changeSlide() {
+      slides[currentImage].classList.remove("visible");
+      currentImage = (currentImage + 1) % slides.length;
+      slides[currentImage].classList.add("visible");
+    }
+
+    setInterval(changeSlide, 3000);
+  });
+</script>
+
+<style>
+  #slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+
+  .slide:first-child {
+    opacity: 1;
+  }
+
+  .slide.visible {
+    opacity: 1;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "NanumPenScript", sans-serif;
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+  }
+  @media screen and (min-width: 1024px) {
+    #slideshow {
+      height: 70vh;
+    }
+
+    .slide-text {
+      font-size: 10rem;
+    }
+  }
+</style>

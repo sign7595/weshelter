@@ -1,17 +1,16 @@
-
 @font-face {
   font-family: "figtree";
   src: url("../../public/fonts/Figtree-VariableFont_wght.woff2") format("woff2"),
     url("../../public/fonts/Figtree-VariableFont_wght.woff") format("woff"),
     url("../../public/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
-  font-weight: 500;
+  font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: "NanumPenScript";
   src: url("../../public/fonts/NanumPenScript-Regular.woff2") format("woff2"),
-       url("../../public/fonts/NanumPenScript-Regular.woff") format("woff");
+    url("../../public/fonts/NanumPenScript-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,17 +19,16 @@
 @font-face {
   font-family: "Anton";
   src: url("../../public/fonts/Anton-Regular.woff2") format("woff2"),
-       url("../../public/fonts/Anton-Regular.woff") format("woff");
+    url("../../public/fonts/Anton-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-
 :root {
-  --primary-color: #0076F1;
-  --secondary-color: #FE8F29;
-  --footer-color: #0F172A;
+  --primary-color: #0076f1;
+  --secondary-color: #fe8f29;
+  --footer-color: #0f172a;
 }
 
 html,
@@ -40,4 +38,3 @@ body {
   height: 100%;
   font-family: "figtree",  serif;
 }
-
