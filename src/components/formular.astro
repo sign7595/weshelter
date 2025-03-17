@@ -1,5 +1,17 @@
 ---
-const { overskrift, navn1, navn2, navn3, navn4, navn5, navn6, navn7, navn8, navn9, navn10 } = Astro.props;
+const {
+  overskrift,
+  navn1,
+  navn2,
+  navn3,
+  navn4,
+  navn5,
+  navn6,
+  navn7,
+  navn8,
+  navn9,
+  navn10,
+} = Astro.props;
 
 import Cta2 from "../components/cta2.astro";
 import Klikboks from "../components/klikboks.astro";
@@ -56,7 +68,9 @@ import Klikboks from "../components/klikboks.astro";
     <Klikboks />
     <p>{navn10}</p>
   </div>
-  <Cta2 button="NÆSTE" />
+  <div class="button">
+    <Cta2 button="NÆSTE" class="next" />
+  </div>
 </article>
 
 <style>
@@ -78,11 +92,18 @@ import Klikboks from "../components/klikboks.astro";
   }
   h3 {
     margin: auto;
-    margin-bottom: 2vw;
+    margin-bottom: 5vw;
     text-align: center;
     font-size: 3.5vw;
+    padding-top: 1rem;
   }
   button {
     text-align: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
   }
 </style>

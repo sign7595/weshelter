@@ -1,0 +1,80 @@
+---
+import Cta3 from "./cta3.astro";
+import Cta2 from "./cta2.astro";
+---
+
+<form>
+  <input type="text" id="name" name="name" required placeholder="Fulde navn" />
+
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    required
+    placeholder="Telefonnummer"
+  />
+
+  <input type="email" id="email" name="email" required placeholder="Email" />
+
+  <input type="text" id="zip" name="zip" required placeholder="Postnummer" />
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="friend" name="friend" />
+    <label for="friend">Tilmeld med en ven:</label>
+  </div>
+
+  <input
+    type="text"
+    id="friend-name"
+    name="friend-name"
+    placeholder="Navn på din ven"
+  />
+
+  <div class="button-container">
+    <Cta3 button="TILBAGE" type="button" class="back" />
+    <Cta2 button="NÆSTE" type="submit" class="submit" />
+  </div>
+</form>
+
+<style>
+  form {
+    background-color: #0076f1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 40px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid white;
+    color: white;
+    font-size: 19px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+  }
+
+  input::placeholder {
+    color: white;
+  }
+
+  .checkbox-container {
+    display: flex;
+    margin-top: 70px;
+    font-size: 19px;
+  }
+
+  .checkbox-container input {
+    margin-right: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+</style>

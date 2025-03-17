@@ -3,7 +3,6 @@
   src: url("../../public/fonts/Figtree-VariableFont_wght.woff2") format("woff2"),
     url("../../public/fonts/Figtree-VariableFont_wght.woff") format("woff"),
     url("../../public/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
-  font-weight: 300;
   font-display: swap;
 }
 
@@ -37,4 +36,19 @@ body {
   width: 100%;
   height: 100%;
   font-family: "figtree",  serif;
+}
+
+.bliv_frivillig h2,
+.bliv_frivillig h3 {
+  font-family: "figtree";
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .bliv_frivillig h2 {
+    font-size: 50px;
+  }
+  .bliv_frivillig h3 {
+    font-size: 30px;
+  }
 }
