@@ -7,67 +7,59 @@ import Slideshow from "../components/slideshow.astro";
 import Tekst from "../components/forsidetekst.astro";
 import Card from "../components/card.astro";
 import Carousel from "../components/Carousel.astro";
+import Formular from "../components/formular.astro";
+import Footer from "../components/footer.astro";
 
 const cards = [
   {
     img: "img/menu1.svg",
     overskrift: "Netværksvenner",
-    beskrivelse:
-      "Frivillige netværksvenner giver deres tid, nærvær og venskab til et socialt udsat menneske.",
+    beskrivelse: "Frivillige netværksvenner giver deres tid, nærvær og venskab til et socialt udsat menneske.",
   },
   {
     img: "img/menu2.svg",
     overskrift: "Økonomirådgivningen",
-    beskrivelse:
-      "WeShelters økonomi- og gældsrådgivning tilbyder gratis og uvildig rådgivning til mennesker i hjemløshed og andre udsatte positioner.",
+    beskrivelse: "WeShelters økonomi- og gældsrådgivning tilbyder gratis og uvildig rådgivning til mennesker i hjemløshed og andre udsatte positioner.",
   },
   {
     img: "img/menu7.svg",
     overskrift: "De sociale madklubber",
-    beskrivelse:
-      "I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte.",
+    beskrivelse: "I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte.",
   },
   {
     img: "img/menu3.svg",
     overskrift: "Peer-to-peer",
-    beskrivelse:
-      "Peer-frivillige er personer, som har erfaring med hjemløshed, der støtter nuværende hjemløse.",
+    beskrivelse: "Peer-frivillige er personer, som har erfaring med hjemløshed, der støtter nuværende hjemløse.",
   },
   {
     img: "img/menu4.svg",
     overskrift: "Møbelhjælp",
-    beskrivelse:
-      "Gennem indsamling og transport af møbler hjælper vi hjemløse, der finder en bolig, med at gøre den til et hjem.",
+    beskrivelse: "Gennem indsamling og transport af møbler hjælper vi hjemløse, der finder en bolig, med at gøre den til et hjem.",
   },
   {
     img: "img/menu5.svg",
     overskrift: "Yoga",
-    beskrivelse:
-      "Yoga-frivillige giver ro og nærvær gennem yogaundervisning til mennesker, hvis liv er præget af kaos.",
+    beskrivelse: "Yoga-frivillige giver ro og nærvær gennem yogaundervisning til mennesker, hvis liv er præget af kaos.",
   },
   {
     img: "img/menu6.svg",
     overskrift: "LGBT+ venner",
-    beskrivelse:
-      "LGBT+ venner tilbyder deres venskab og omsorg til en social udsat LGBT+ person.",
+    beskrivelse: "LGBT+ venner tilbyder deres venskab og omsorg til en social udsat LGBT+ person.",
   },
   {
     img: "img/menu8.svg",
     overskrift: "Ledelse af en aktivitet",
-    beskrivelse:
-      "Er du god til at koordinere? Har du erfaring med ledelse, eller drømmer du om at få det? Så bliv frivillig leder!",
+    beskrivelse: "Er du god til at koordinere? Har du erfaring med ledelse, eller drømmer du om at få det? Så bliv frivillig leder!",
   },
   {
     img: "img/menu9.svg",
     overskrift: "Massage",
-    beskrivelse:
-      "Massage-frivillige giver ro, nærvær og øget kropsbevidsthed til mennesker, hvis liv er præget af kaos.",
+    beskrivelse: "Massage-frivillige giver ro, nærvær og øget kropsbevidsthed til mennesker, hvis liv er præget af kaos.",
   },
   {
     img: "img/menu10.svg",
     overskrift: "Aktivitetsklubber",
-    beskrivelse:
-      "Frivillige oplevelser og fællesskab til mennesker i rusmiddelbehandling og unge hjemløse gennem sociale gruppeaktiviteter.",
+    beskrivelse: "Frivillige oplevelser og fællesskab til mennesker i rusmiddelbehandling og unge hjemløse gennem sociale gruppeaktiviteter.",
   },
 ];
 ---
@@ -78,6 +70,35 @@ const cards = [
     <Slideshow />
     <Tekst />
     <Carousel cards={cards} />
+    <div class="bliv_frivillig">
+      <h2>Bliv frivillig i dag</h2>
+      <img src="/public/img/Vector2.svg" alt="orange streg" />
+      <h3>Gør en forskel</h3>
+    </div>
+
+    <Formular
+      overskrift="Vælg dit bridrag"
+      navn1="De sociale madklubber"
+      navn2="Økonomirådgivning"
+      navn3="Aktivitetsklubber"
+      navn4="Yoga"
+      navn5="Møbelhjælp"
+      navn6="Netværksvenner"
+      navn7="Peer-to-Peer"
+      navn8="LGBT+ venner"
+      navn9="Massage"
+      navn10="Ledelse af en aktivitet"
+    />
   </main>
-  <footer></footer>
+  <footer>
+    <Footer />
+  </footer>
 </Layout>
+
+<style>
+  .bliv_frivillig {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+  }
+</style>
