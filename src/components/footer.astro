@@ -1,0 +1,49 @@
+---
+import Cta1 from "../components/cta1.astro";
+---
+
+<article>
+  <section class="billede">
+    <img src="/public/img/footergalleri.svg" alt="billedegalleri" />
+    <Cta1 button="Støt" />
+  </section>
+  <section class="grid">
+    <div>
+      <h3>Genveje</h3>
+      <p><a href="">Få hjælp</a></p>
+      <p><a href="/src/pages/index.astro">Bliv frivillig</a></p>
+      <p><a href="">Om os</a></p>
+    </div>
+    <div>
+      <h3>Kontakt</h3>
+      <p>slotsgade 2, 1. sal</p>
+      <p>2200 København N</p>
+      <p>TLF: 36161113</p>
+      <div>
+        <p>kontakt@weshelter.dk</p>
+        <p>CVR 8096515</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  article {
+    margin-top: 10vw;
+    background-color: #0f172a;
+    color: white;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2vw;
+    padding: 2vw;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  img {
+    width: 100%;
+  }
+</style>
