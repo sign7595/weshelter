@@ -5,9 +5,17 @@ import Cta1 from "../components/cta1.astro";
 <article>
   <section class="billede">
     <img src="/public/img/footergalleri.svg" alt="billedegalleri" />
-    <Cta1 button="Støt" />
+    <Cta1 button="Støt" class="cta-knap" />
   </section>
   <section class="grid">
+    <div class="hide">
+      <h3>Fonden Missionen blandt Hjemløse</h3><p>
+        Vi arbejder for at give hjemløse og udsatte bedre vilkår. Målet er at
+        gøre op med hjemløshed, ensomhed og psykisk mistrivsel. Arbejdet sker på
+        herberger, væresteder og i frivillige indsatser.
+      </p>
+    </div>
+
     <div>
       <h3>Genveje</h3>
       <p><a href="">Få hjælp</a></p>
@@ -16,20 +24,27 @@ import Cta1 from "../components/cta1.astro";
     </div>
     <div>
       <h3>Kontakt</h3>
-      <p>slotsgade 2, 1. sal</p>
+      <p>Slotsgade 2, 1. sal</p>
       <p>2200 København N</p>
       <p>TLF: 36161113</p>
-      <div>
-        <p>kontakt@weshelter.dk</p>
-        <p>CVR 8096515</p>
-      </div>
+      <br />
+      <p>kontakt@weshelter.dk</p>
+      <p>CVR 8096515</p>
     </div>
   </section>
+  <div class="divider"></div>
+  <div class="socials">
+    <img src="/public/img/linkedin.webp" alt="" />
+    <img src="/public/img/facebook.webp" alt="" />
+    <img src="/public/img/instagram.webp" alt="" />
+    <img src="/public/img/twitter.webp" alt="" />
+  </div>
+  <p class="copyright">Copyright © 2025 Fonden Missionen blandt Hjemløse</p>
 </article>
 
 <style>
   article {
-    margin-top: 10vw;
+    margin-top: 20vw;
     background-color: #0f172a;
     color: white;
   }
@@ -38,6 +53,11 @@ import Cta1 from "../components/cta1.astro";
     grid-template-columns: 1fr 1fr;
     margin: 2vw;
     padding: 2vw;
+    padding-bottom: 2rem;
+  }
+
+  .hide {
+    display: none;
   }
   a {
     text-decoration: none;
@@ -45,5 +65,50 @@ import Cta1 from "../components/cta1.astro";
   }
   img {
     width: 100%;
+  }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    background-color: #333a4a;
+  }
+
+  .socials {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .socials img {
+    width: 10%;
+  }
+
+  .copyright {
+    color: #878b95;
+    text-align: center;
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hide {
+      display: block;
+      padding-inline: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 2vw;
+      padding: 2vw;
+      padding-bottom: 2rem;
+    }
+
+    .socials {
+      gap: 3rem;
+    }
+    .socials img {
+      width: 3%;
+    }
   }
 </style>

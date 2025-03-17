@@ -15,7 +15,7 @@
     loop
     muted
     playsinline></video>
-  <h3>
+  <h3 class="nederst">
     Se nedenfor, hvilke muligheder, der er for at blive frivillig, og læs mere
     om, hvad det frivillige arbejde hos os indebærer.
   </h3>
@@ -45,30 +45,28 @@
   h1 {
     font-family: "Anton", sans-serif;
     font-weight: 200;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
+    padding-top: 1rem;
   }
 
   .stor {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--secondary-color);
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 400;
+    padding-top: 1.5rem;
   }
 
   h3 {
-    font-size: 1.1rem;
-    line-height: 40px;
+    font-size: 1rem;
+    line-height: 2rem;
     font-weight: 400;
-  }
-
-  h1,
-  h2,
-  h3 {
-    padding-top: 1.1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
   }
 
   .video {
@@ -78,7 +76,8 @@
 
   @media screen and (min-width: 1024px) {
     h1 {
-      font-size: 5rem;
+      font-size: 4.5rem;
+      padding-top: 0.5rem;
     }
 
     .stor {
@@ -89,7 +88,14 @@
     h3 {
       font-size: 1.5rem;
       padding-inline: 15rem;
+      padding-top: 0rem;
     }
+
+    .nederst {
+      padding-top: 6rem;
+      padding-inline: 21rem;
+    }
+
     video {
       width: 50%;
       max-width: 500px;

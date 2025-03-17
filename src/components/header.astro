@@ -1,0 +1,139 @@
+---
+import Cta1 from "./cta1.astro";
+---
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="/img/logo.webp" alt="logo" />
+  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="">Få hjælp</a>
+      <a href="">Bliv frivillig</a>
+      <a href="">Om os</a>
+      <!-- <Cta1 button="STØT" class="støt" /> -->
+    </div>
+    <Cta1 button="STØT" class="stotmobil" />
+    <div class="burger-menu" id="burger-menu" onclick="toggleMenu()">
+      &#9776;
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="">Få hjælp</a></li>
+    <li><a class="frivillig" href="">Bliv frivillig</a></li>
+    <li><a href="">Om os</a></li>
+  </ul>
+</div>
+
+<style>
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    padding-inline: 1.5rem;
+  }
+
+  .navbar .logo img {
+    width: 80%;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  .burger-menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: block;
+    margin-left: 20px;
+  }
+
+  .mobile-menu {
+    display: none;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    border: solid black 1px;
+    z-index: 1;
+  }
+
+  .mobile-menu ul li {
+    text-align: center;
+    line-height: 60px;
+    font-weight: 100;
+    font-size: 20px;
+    list-style-type: none;
+  }
+
+  .mobile-menu ul li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .mobile-menu ul li a:hover {
+    color: #0076f1;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .navbar .logo img {
+      width: 30%;
+    }
+
+    .navbar {
+      padding-top: 1rem;
+    }
+
+    .burger-menu {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 90px;
+    }
+
+    .nav-links a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #0076f1;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const burgerMenu = document.getElementById("burger-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (burgerMenu && mobileMenu) {
+      burgerMenu.addEventListener("click", function () {
+        if (mobileMenu.style.display === "block") {
+          mobileMenu.style.display = "none";
+        } else {
+          mobileMenu.style.display = "block";
+        }
+      });
+    }
+  });
+</script>
