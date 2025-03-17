@@ -1,6 +1,6 @@
 ---
 const {
-  cards,
+  cards = [],
 }: { cards: { img: string; overskrift: string; beskrivelse: string }[] } =
   Astro.props;
 import Card from "../components/card.astro";
