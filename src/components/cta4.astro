@@ -25,8 +25,19 @@ const { button, link } = Astro.props;
   }
 
   @media (min-width: 768px) {
-    article {
-      display: none;
+    a {
+      border: 2px solid #0071f1;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      background-color: #0071f1;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 3vw 8vw;
+      text-align: center;
+      margin-right: 1%;
+      margin-bottom: 1%;
     }
   }
 </style>
