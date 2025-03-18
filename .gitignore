@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# weshelter video index
+/public/video/weshelter.mp4
+
+/public/video/*.mp4
