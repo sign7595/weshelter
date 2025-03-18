@@ -25,5 +25,3 @@ pnpm-debug.log*
 
 # weshelter video index
 /public/video/weshelter.mp4
-
-/public/video/*.mp4
