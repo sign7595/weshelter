@@ -11,7 +11,8 @@ import Cta4 from "../components/cta4.astro";
     <Header />
   </header>
   <main>
-    <section class="hero">
+    <Cta4 link="/" button="Tilbage" />
+    <section class="hero" id="hero">
       <h1>De sociale madklubber</h1>
       <img src="/public/img/menu7.webp" alt="tegning af madklub" />
       <p>
@@ -21,23 +22,23 @@ import Cta4 from "../components/cta4.astro";
     </section>
     <section class="folder_menu">
       <div class="knapper">
-        <Cta4 button="Madklubben" />
-        <Cta4 button="Hvornår" />
-        <Cta4 button="Hvor" />
-        <Cta4 button="Mød de frivillige" />
+        <Cta4 link="#madklub" button="Madklubben" />
+        <Cta4 link="#hvor" button="Hvor" />
+        <Cta4 link="#hvornår" button="Hvornår" />
+        <Cta4 link="#frivillige" button="Mød de frivillige" />
       </div>
 
-      <div class="blue">
+      <div class="blue" id="madklub">
         <Folder
           overskrift="Hvad er en social madklub"
           tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
           billede="../public/img/folder1.webp"
         />
       </div>
-      <div>
+      <div id="hvor">
         <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="../public/img/folder2.webp" />
       </div>
-      <div class="blue">
+      <div class="blue" id="hvornår">
         <Folder
           overskrift="Hvornår er der madklub arrangementer?"
           tekst1="Datoer for arrangementer:"
@@ -47,7 +48,7 @@ import Cta4 from "../components/cta4.astro";
           billede="../public/img/folder3.webp"
         />
       </div>
-      <div>
+      <div id="frivillige">
         <Folder
           overskrift="Vores frivillige fortæller:"
           tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
@@ -56,6 +57,9 @@ import Cta4 from "../components/cta4.astro";
         />
       </div>
     </section>
+    <div class="toppen">
+      <Cta4 link="#hero" button="Til toppen" />
+    </div>
   </main>
   <footer>
     <Footer />
@@ -81,7 +85,7 @@ import Cta4 from "../components/cta4.astro";
   .hero h1 {
     text-align: center;
     font-size: 7vw;
-    margin-top: 15vw;
+    margin-top: 4vw;
     margin-left: 10vw;
     margin-right: 10vw;
     line-height: 8vw;
@@ -92,5 +96,10 @@ import Cta4 from "../components/cta4.astro";
     column-gap: 1vw;
     margin-bottom: 2vw;
     margin-top: 4vw;
+  }
+  .toppen {
+    position: relative;
+    right: 0%;
+    width: 100%;
   }
 </style>
