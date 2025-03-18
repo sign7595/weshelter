@@ -32,7 +32,7 @@ import Cta2 from "./cta2.astro";
 
   <div class="button-container">
     <Cta3 button="TILBAGE" type="button" class="back" />
-    <Cta2 button="NÆSTE" type="submit" class="submit" />
+    <Cta2 button="INDSEND" type="submit" class="submit" />
   </div>
 </form>
 
@@ -76,5 +76,16 @@ import Cta2 from "./cta2.astro";
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    form {
+      max-width: 500px;
+      padding-top: 7rem;
+    }
+
+    .button-container {
+      display: none;
+    }
   }
 </style>

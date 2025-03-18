@@ -4,8 +4,14 @@ import Cta1 from "../components/cta1.astro";
 
 <article>
   <section class="billede">
-    <img src="/public/img/footergalleri.svg" alt="billedegalleri" />
-    <Cta1 button="Støt" class="cta-knap" />
+    <img
+      class="galleri"
+      src="/public/img/footergalleri.svg"
+      alt="billedegalleri"
+    />
+    <div class="knap">
+      <Cta1 button="Støt" class="cta-knap" />
+    </div>
   </section>
   <section class="grid">
     <div class="hide">
@@ -91,6 +97,13 @@ import Cta1 from "../components/cta1.astro";
     padding-bottom: 3rem;
   }
 
+  .knap {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    z-index: 10;
+  }
+
   @media (min-width: 1024px) {
     .hide {
       display: block;
@@ -109,6 +122,9 @@ import Cta1 from "../components/cta1.astro";
     }
     .socials img {
       width: 3%;
+    }
+    .knap {
+      transform: translate(-50%, -800%);
     }
   }
 </style>
