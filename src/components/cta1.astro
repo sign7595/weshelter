@@ -1,9 +1,9 @@
 ---
-const { button } = Astro.props;
+const { button, class: className } = Astro.props;
 ---
 
 <article class="cta-knap">
-  <a href="#">{button}</a>
+  <a href="#" class={className}>{button}</a>
 </article>
 
 <style>

@@ -51,4 +51,19 @@ body {
   .bliv_frivillig h3 {
     font-size: 30px;
   }
+  .formulargrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .background {
+    background-color: #0076f1;
+  }
+}
+
+@media (min-width: 760px) {
+  .formulargrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #0076f1;
+  }
 }

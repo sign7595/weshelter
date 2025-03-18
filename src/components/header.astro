@@ -2,31 +2,34 @@
 import Cta1 from "./cta1.astro";
 ---
 
-<nav class="navbar">
-  <div class="logo">
-    <img src="/img/logo.webp" alt="logo" />
-  </div>
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="">Få hjælp</a>
-      <a href="">Bliv frivillig</a>
-      <a href="">Om os</a>
-      <!-- <Cta1 button="STØT" class="støt" /> -->
+<section class="header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/src/pages/header.astro">
+        <img src="/img/logo.webp" alt="logo" />
+      </a>
     </div>
-    <Cta1 button="STØT" class="stotmobil" />
-    <div class="burger-menu" id="burger-menu" onclick="toggleMenu()">
-      &#9776;
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="">Få hjælp</a>
+        <a href="/src/pages/index.astro">Bliv frivillig</a>
+        <a href="">Om os</a>
+      </div>
+      <Cta1 button="STØT" class="stotmobil" />
+      <div class="burger-menu" id="burger-menu" onclick="toggleMenu()">
+        &#9776;
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="mobile-menu" id="mobile-menu">
-  <ul>
-    <li><a href="">Få hjælp</a></li>
-    <li><a class="frivillig" href="">Bliv frivillig</a></li>
-    <li><a href="">Om os</a></li>
-  </ul>
-</div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="">Få hjælp</a></li>
+      <li><a class="frivillig" href="">Bliv frivillig</a></li>
+      <li><a href="">Om os</a></li>
+    </ul>
+  </div>
+</section>
 
 <style>
   .navbar {
@@ -37,6 +40,7 @@ import Cta1 from "./cta1.astro";
     padding-top: 3rem;
     padding-bottom: 0.5rem;
     padding-inline: 1.5rem;
+    background-color: white;
   }
 
   .navbar .logo img {
@@ -61,7 +65,7 @@ import Cta1 from "./cta1.astro";
     background-color: white;
     position: absolute;
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     border: solid black 1px;
     z-index: 1;
   }
@@ -89,11 +93,12 @@ import Cta1 from "./cta1.astro";
 
   @media screen and (min-width: 768px) {
     .navbar .logo img {
-      width: 30%;
+      width: 70%;
     }
 
     .navbar {
       padding-top: 1rem;
+      grid-template-columns: 1fr 3fr;
     }
 
     .burger-menu {
@@ -107,12 +112,13 @@ import Cta1 from "./cta1.astro";
     .nav-links {
       display: flex;
       gap: 90px;
+      padding-right: 3rem;
     }
 
     .nav-links a {
       color: #000;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     .nav-links a:hover {

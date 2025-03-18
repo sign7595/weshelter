@@ -19,57 +19,59 @@ import Klikboks from "../components/klikboks.astro";
 
 <article>
   <h3>{overskrift}</h3>
-  <div>
-    <Klikboks />
+  <section class="grid">
+    <div>
+      <Klikboks />
 
-    <p>{navn1}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn1}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn2}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn2}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn3}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn3}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn4}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn4}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn5}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn5}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn6}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn6}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn7}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn7}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn8}</p>
-  </div>
-  <div>
-    <Klikboks />
+      <p>{navn8}</p>
+    </div>
+    <div>
+      <Klikboks />
 
-    <p>{navn9}</p>
-  </div>
-  <div>
-    <Klikboks />
-    <p>{navn10}</p>
-  </div>
+      <p>{navn9}</p>
+    </div>
+    <div>
+      <Klikboks />
+      <p>{navn10}</p>
+    </div>
+  </section>
   <div class="button">
-    <Cta2 button="NÆSTE" class="next" />
+    <Cta2 button="INDSEND" class="next" />
   </div>
 </article>
 
@@ -105,5 +107,50 @@ import Klikboks from "../components/klikboks.astro";
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    article {
+      padding-top: 1.8vw;
+      padding-bottom: 4vw;
+      justify-content: center;
+    }
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-left: 4vw;
+      padding-top: 2rem;
+    }
+    div p {
+      /* grid-column: 2 / span 3; */
+      font-size: 1.2vw;
+    }
+    h3 {
+      margin: auto;
+      margin-bottom: 0.5vw;
+      text-align: center;
+      font-size: 1.9vw;
+      padding-top: 1rem;
+      /* display: none; */
+    }
+    button {
+      text-align: center;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      /* display: none; */
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 760px) {
+    div p {
+      font-size: 1.6vw;
+    }
   }
 </style>
