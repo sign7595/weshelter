@@ -1,8 +1,14 @@
 ---
 const {
   cards,
-}: { cards: { img: string; overskrift: string; beskrivelse: string }[] } =
-  Astro.props;
+}: {
+  cards: {
+    img: string;
+    overskrift: string;
+    beskrivelse: string;
+    link: string;
+  }[];
+} = Astro.props;
 import Card from "../components/card.astro";
 ---
 
@@ -16,6 +22,7 @@ import Card from "../components/card.astro";
             img={card.img}
             overskrift={card.overskrift}
             beskrivelse={card.beskrivelse}
+            link={card.link}
           />
         </div>
       ))

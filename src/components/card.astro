@@ -1,13 +1,34 @@
 ---
-const { img, overskrift, beskrivelse } = Astro.props;
+const { img, overskrift, beskrivelse, link } = Astro.props;
 ---
 
+<!-- <div class="card">
+  <a href={link} class="card">
+    <img src={img} alt={overskrift} />
+    <h3>{overskrift}</h3>
+    <h4>{beskrivelse}</h4>
+  </a>
+</div> -->
 <div class="card">
-  <img src={img} alt={overskrift} />
-  <h3>{overskrift}</h3>
-  <h4>{beskrivelse}</h4>
+  {
+    link && (
+      <a href={link} class="card-link">
+        <img src={img} alt={overskrift} />
+        <h3>{overskrift}</h3>
+        <h4>{beskrivelse}</h4>
+      </a>
+    )
+  }
+  {
+    !link && (
+      <>
+        <img src={img} alt={overskrift} />
+        <h3>{overskrift}</h3>
+        <h4>{beskrivelse}</h4>
+      </>
+    )
+  }
 </div>
-
 <style>
   .card {
     display: flex;
@@ -62,6 +83,15 @@ const { img, overskrift, beskrivelse } = Astro.props;
 
   h3:hover::after {
     transform: scaleX(1);
+  }
+
+  .card:hover h3::after {
+    transform: scaleX(1);
+  }
+
+  .card-link {
+    text-decoration-line: none;
+    color: black;
   }
 
   @media (min-width: 1024px) {
