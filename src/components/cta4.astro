@@ -1,9 +1,9 @@
 ---
-const { button } = Astro.props;
+const { button, link } = Astro.props;
 ---
 
 <article>
-  <a href="#">{button}</a>
+  <a href={link}>{button}</a>
 </article>
 
 <style>
