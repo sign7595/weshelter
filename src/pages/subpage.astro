@@ -2,14 +2,95 @@
 import LayoutSubpage from "../layouts/LayoutSubpage.astro";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
+import Folder from "../components/folder.astro";
+import Cta4 from "../components/cta4.astro";
 ---
 
 <LayoutSubpage>
   <header>
     <Header />
   </header>
-  <main></main>
+  <main>
+    <section class="hero">
+      <h1>De sociale madklubber</h1>
+      <img src="/public/img/menu7.webp" alt="tegning af madklub" />
+      <p>
+        I vores sociale madklubber er det gode måltid samlingspunktet for frivillige, hjemløse og socialt udsatte. Planlægning, indkøb og tilberedningen klares i fællesskab. Der er plads til alle, også selvom overskuddet kun rækker til foldning af
+        middagsservietter ved spisebordet. For mange er maden i madklubben det eneste varme måltid, de får på ugen. For andre er selskabet og de gode samtaler et tiltrængt pusterum fra ensomheden derhjemme.
+      </p>
+    </section>
+    <section class="folder_menu">
+      <div class="knapper">
+        <Cta4 button="Madklubben" />
+        <Cta4 button="Hvornår" />
+        <Cta4 button="Hvor" />
+        <Cta4 button="Mød de frivillige" />
+      </div>
+
+      <div class="blue">
+        <Folder
+          overskrift="Hvad er en social madklub"
+          tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
+          billede="../public/img/folder1.webp"
+        />
+      </div>
+      <div>
+        <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="../public/img/folder2.webp" />
+      </div>
+      <div class="blue">
+        <Folder
+          overskrift="Hvornår er der madklub arrangementer?"
+          tekst1="Datoer for arrangementer:"
+          tekst2="21/3 klokken 18-20 Vesterbro"
+          tekst3="28/3 klokken 18-20 Østerbro"
+          tekst4="4/4 klokken 18-20 Nørrebro"
+          billede="../public/img/folder3.webp"
+        />
+      </div>
+      <div>
+        <Folder
+          overskrift="Vores frivillige fortæller:"
+          tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
+          tekst2="“Jeg bor alene og nyder også selv at være en del af madklubberne for det sociale perspektiv” - ole 35 år"
+          billede="../public/img/folder4.webp"
+        />
+      </div>
+    </section>
+  </main>
   <footer>
     <Footer />
   </footer>
 </LayoutSubpage>
+
+<style>
+  .blue {
+    background-color: #0076f1;
+    color: white;
+    padding-bottom: 0;
+  }
+  .hero {
+    margin-left: 4vw;
+    margin-right: 4vw;
+    line-height: 6vw;
+    padding: 2vw;
+  }
+  .hero img {
+    width: 80%;
+    justify-self: center;
+  }
+  .hero h1 {
+    text-align: center;
+    font-size: 7vw;
+    margin-top: 15vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    line-height: 8vw;
+  }
+  .knapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    margin-bottom: 2vw;
+    margin-top: 4vw;
+  }
+</style>

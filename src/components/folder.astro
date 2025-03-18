@@ -1,0 +1,31 @@
+---
+const { overskrift, tekst1, tekst2, tekst3, tekst4, tekst5, billede } = Astro.props;
+---
+
+<article>
+  <div>
+    <h3>{overskrift}</h3>
+    <p>{tekst1}</p>
+    <p>{tekst2}</p>
+    <p>{tekst3}</p>
+    <p>{tekst4}</p>
+    <p>{tekst5}</p>
+  </div>
+  <img src={billede} alt="billede af aktivitet" />
+</article>
+
+<style>
+  article div {
+    margin-left: 6vw;
+    margin-right: 2vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  article {
+    margin-bottom: 0;
+  }
+</style>
