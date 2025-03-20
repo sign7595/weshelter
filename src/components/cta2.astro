@@ -1,9 +1,10 @@
 ---
-const { button } = Astro.props;
+const { button, id } = Astro.props;
 ---
 
 <article>
-  <a href="#">{button}</a>
+  <div class="knap_next" id={id}>{button}</div>
+  <!-- <a href="#">{button}</a> -->
 </article>
 
 <style>
@@ -11,7 +12,7 @@ const { button } = Astro.props;
     display: flex;
   }
 
-  a {
+  .knap_next {
     border-radius: 50px;
     background-color: white;
     color: black;
@@ -25,6 +26,7 @@ const { button } = Astro.props;
       background-color 0.1s ease,
       color 0.1s ease;
     font-weight: 700;
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
@@ -35,7 +37,7 @@ const { button } = Astro.props;
     }
   }
 
-  a:hover {
+  .knap_next:hover {
     transform: scale(1.05);
     background-color: #1c49a4;
     color: white;
