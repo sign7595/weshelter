@@ -6,6 +6,7 @@ import Folder from "../components/folder.astro";
 import Cta4 from "../components/cta4.astro";
 import Formular3 from "../components/formular3.astro";
 import Cta5 from "../components/cta5.astro";
+import Foldermenu from "../components/folder-menu.astro";
 ---
 
 <LayoutSubpage>
@@ -18,50 +19,37 @@ import Cta5 from "../components/cta5.astro";
       <h1>De sociale madklubber</h1>
       <img src="/img/menu7.webp" alt="tegning af madklub" />
       <p>
-        I vores sociale madklubber er det gode måltid samlingspunktet for
-        frivillige, hjemløse og socialt udsatte. Planlægning, indkøb og
-        tilberedningen klares i fællesskab. Der er plads til alle, også selvom
-        overskuddet kun rækker til foldning af middagsservietter ved
-        spisebordet. For mange er maden i madklubben det eneste varme måltid, de
-        får på ugen. For andre er selskabet og de gode samtaler et tiltrængt
-        pusterum fra ensomheden derhjemme.
+        I vores sociale madklubber er det gode måltid samlingspunktet for frivillige, hjemløse og socialt udsatte. Planlægning, indkøb og tilberedningen klares i fællesskab. Der er plads til alle, også selvom overskuddet kun rækker til foldning af
+        middagsservietter ved spisebordet. For mange er maden i madklubben det eneste varme måltid, de får på ugen. For andre er selskabet og de gode samtaler et tiltrængt pusterum fra ensomheden derhjemme.
       </p>
     </section>
 
     <Formular3 />
+    <div class="desktop">
+      <Foldermenu />
+    </div>
     <section class="folder_menu">
       <div class="knapper">
-        <Cta5 link="#madklub" button="Madklubben" />
-        <Cta5 link="#hvor" button="Hvor" />
-        <Cta5 link="#hvornår" button="Hvornår" />
-        <Cta5 link="#frivillige" button="Mød de frivillige" />
+        <Cta4 link="#madklub1" button="Madklubben" />
+        <Cta4 link="#hvor1" button="Hvor" />
+        <Cta4 link="#hvornår1" button="Hvornår" />
+        <Cta4 link="#frivillige1" button="Mød de frivillige" />
       </div>
 
-      <div class="blue" id="madklub">
+      <div class="blue" id="madklub1">
         <Folder
           overskrift="Hvad er en social madklub"
           tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
           billede="/img/folder1.webp"
         />
       </div>
-      <div id="hvor">
-        <Folder
-          overskrift="Hvor er vores madklub arrangementer"
-          tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord"
-          billede="/img/folder2.webp"
-        />
+      <div id="hvor1">
+        <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="/img/folder2.webp" />
       </div>
-      <div class="blue" id="hvornår">
-        <Folder
-          overskrift="Hvornår er der madklub arrangementer?"
-          tekst1="Datoer for arrangementer:"
-          tekst2="21/3 klokken 18-20 Vesterbro"
-          tekst3="28/3 klokken 18-20 Østerbro"
-          tekst4="4/4 klokken 18-20 Nørrebro"
-          billede="/img/folder3.webp"
-        />
+      <div class="blue" id="hvornår1">
+        <Folder overskrift="Hvornår er der madklub arrangementer?" tekst1="Datoer for arrangementer:" tekst2="21/3 klokken 18-20 Vesterbro" tekst3="28/3 klokken 18-20 Østerbro" tekst4="4/4 klokken 18-20 Nørrebro" billede="/img/folder3.webp" />
       </div>
-      <div id="frivillige">
+      <div id="frivillige1">
         <Folder
           overskrift="Vores frivillige fortæller:"
           tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
@@ -116,6 +104,9 @@ import Cta5 from "../components/cta5.astro";
     right: 0%;
     width: 100%;
   }
+  .desktop {
+    display: none;
+  }
 
   @media screen and (min-width: 760px) {
     .hero img {
@@ -142,6 +133,15 @@ import Cta5 from "../components/cta5.astro";
     .blue {
       margin-top: -5%;
       z-index: 5;
+    }
+    .folder_menu {
+      display: none;
+    }
+    .toppen {
+      display: none;
+    }
+    .desktop {
+      display: block;
     }
   }
 </style>
