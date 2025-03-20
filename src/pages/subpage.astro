@@ -19,12 +19,19 @@ import Foldermenu from "../components/folder-menu.astro";
       <h1>De sociale madklubber</h1>
       <img src="/img/menu7.webp" alt="tegning af madklub" />
       <p>
-        I vores sociale madklubber er det gode måltid samlingspunktet for frivillige, hjemløse og socialt udsatte. Planlægning, indkøb og tilberedningen klares i fællesskab. Der er plads til alle, også selvom overskuddet kun rækker til foldning af
-        middagsservietter ved spisebordet. For mange er maden i madklubben det eneste varme måltid, de får på ugen. For andre er selskabet og de gode samtaler et tiltrængt pusterum fra ensomheden derhjemme.
+        I vores sociale madklubber er det gode måltid samlingspunktet for
+        frivillige, hjemløse og socialt udsatte. Planlægning, indkøb og
+        tilberedningen klares i fællesskab. Der er plads til alle, også selvom
+        overskuddet kun rækker til foldning af middagsservietter ved
+        spisebordet. For mange er maden i madklubben det eneste varme måltid, de
+        får på ugen. For andre er selskabet og de gode samtaler et tiltrængt
+        pusterum fra ensomheden derhjemme.
       </p>
     </section>
 
-    <Formular3 />
+    <div class="formular3flex">
+      <Formular3 />
+    </div>
     <div class="desktop">
       <Foldermenu />
     </div>
@@ -44,10 +51,21 @@ import Foldermenu from "../components/folder-menu.astro";
         />
       </div>
       <div id="hvor1">
-        <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="/img/folder2.webp" />
+        <Folder
+          overskrift="Hvor er vores madklub arrangementer"
+          tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord"
+          billede="/img/folder2.webp"
+        />
       </div>
       <div class="blue" id="hvornår1">
-        <Folder overskrift="Hvornår er der madklub arrangementer?" tekst1="Datoer for arrangementer:" tekst2="21/3 klokken 18-20 Vesterbro" tekst3="28/3 klokken 18-20 Østerbro" tekst4="4/4 klokken 18-20 Nørrebro" billede="/img/folder3.webp" />
+        <Folder
+          overskrift="Hvornår er der madklub arrangementer?"
+          tekst1="Datoer for arrangementer:"
+          tekst2="21/3 klokken 18-20 Vesterbro"
+          tekst3="28/3 klokken 18-20 Østerbro"
+          tekst4="4/4 klokken 18-20 Nørrebro"
+          billede="/img/folder3.webp"
+        />
       </div>
       <div id="frivillige1">
         <Folder
@@ -68,6 +86,10 @@ import Foldermenu from "../components/folder-menu.astro";
 </LayoutSubpage>
 
 <style>
+  .formular3flex {
+    display: flex;
+    justify-content: center;
+  }
   .blue {
     background-color: #0076f1;
     color: white;
