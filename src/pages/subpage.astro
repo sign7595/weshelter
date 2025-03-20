@@ -5,6 +5,7 @@ import Header from "../components/header.astro";
 import Folder from "../components/folder.astro";
 import Cta4 from "../components/cta4.astro";
 import Formular3 from "../components/formular3.astro";
+import Cta5 from "../components/cta5.astro";
 ---
 
 <LayoutSubpage>
@@ -30,10 +31,10 @@ import Formular3 from "../components/formular3.astro";
     <Formular3 />
     <section class="folder_menu">
       <div class="knapper">
-        <Cta4 link="#madklub" button="Madklubben" />
-        <Cta4 link="#hvor" button="Hvor" />
-        <Cta4 link="#hvornår" button="Hvornår" />
-        <Cta4 link="#frivillige" button="Mød de frivillige" />
+        <Cta5 link="#madklub" button="Madklubben" />
+        <Cta5 link="#hvor" button="Hvor" />
+        <Cta5 link="#hvornår" button="Hvornår" />
+        <Cta5 link="#frivillige" button="Mød de frivillige" />
       </div>
 
       <div class="blue" id="madklub">
@@ -83,6 +84,7 @@ import Formular3 from "../components/formular3.astro";
     background-color: #0076f1;
     color: white;
     padding-bottom: 0;
+    z-index: 5;
   }
   .hero {
     margin-left: 4vw;
@@ -132,13 +134,14 @@ import Formular3 from "../components/formular3.astro";
     .knapper {
       display: flex;
       flex-direction: row;
-      column-gap: 1vw;
-
+      column-gap: 4vw;
+      z-index: -2;
       margin-top: 4vw;
       justify-content: space-between;
     }
     .blue {
-      margin-top: -3.5%;
+      margin-top: -5%;
+      z-index: 5;
     }
   }
 </style>
