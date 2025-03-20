@@ -3,88 +3,132 @@ import Folder from "../components/folder.astro";
 import Cta5 from "../components/cta5.astro";
 ---
 
-<article></article>
 <div class="knapper">
-  <Cta5 link="#madklub" button="Madklubben" />
-  <Cta5 link="#hvor" button="Hvor" />
-  <Cta5 link="#hvornår" button="Hvornår" />
-  <Cta5 link="#frivillige" button="Mød de frivillige" />
+  <Cta5 button="Madklubben" id="madklub-cta" />
+  <Cta5 button="Hvor" id="hvor-cta" />
+  <Cta5 button="Hvornår" id="hvornår-cta" />
+  <Cta5 button="Mød de frivillige" id="frivillige-cta" />
 </div>
+<article>
+  <div id="madklub">
+    <Folder
+      overskrift="Hvad er en social madklub"
+      tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
+      billede="../public/img/folder1.webp"
+    />
+  </div>
+  <div id="hvor">
+    <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="../public/img/folder2.webp" />
+  </div>
+  <div id="hvornår">
+    <Folder overskrift="Hvornår er der madklub arrangementer?" tekst1="Datoer for arrangementer:" tekst2="21/3 klokken 18-20 Vesterbro" tekst3="28/3 klokken 18-20 Østerbro" tekst4="4/4 klokken 18-20 Nørrebro" billede="../public/img/folder3.webp" />
+  </div>
+  <div id="frivillige">
+    <Folder
+      overskrift="Vores frivillige fortæller:"
+      tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
+      tekst2="“Jeg bor alene og nyder også selv at være en del af madklubberne for det sociale perspektiv” - ole 35 år"
+      billede="../public/img/folder4.webp"
+    />
+  </div>
+</article>
 
-<div class="blue" id="madklub">
-  <Folder
-    overskrift="Hvad er en social madklub"
-    tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
-    billede="../public/img/folder1.webp"
-  />
-</div>
-<div id="hvor">
-  <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="../public/img/folder2.webp" />
-</div>
-<div class="blue" id="hvornår">
-  <Folder overskrift="Hvornår er der madklub arrangementer?" tekst1="Datoer for arrangementer:" tekst2="21/3 klokken 18-20 Vesterbro" tekst3="28/3 klokken 18-20 Østerbro" tekst4="4/4 klokken 18-20 Nørrebro" billede="../public/img/folder3.webp" />
-</div>
-<div id="frivillige">
-  <Folder
-    overskrift="Vores frivillige fortæller:"
-    tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
-    tekst2="“Jeg bor alene og nyder også selv at være en del af madklubberne for det sociale perspektiv” - ole 35 år"
-    billede="../public/img/folder4.webp"
-  />
-</div>
+<style>
+  .knapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -2%;
+  }
+  .hide {
+    visibility: hidden;
+  }
+  .opacity {
+    opacity: 44%;
+  }
+  #madklub,
+  #hvor,
+  #hvornår,
+  #frivillige {
+    position: absolute;
+    top: 0;
+    background-color: #0076f1;
+    color: white;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    margin-right: 0;
+    width: 100%;
+  }
+  article {
+    position: relative;
+    margin-bottom: 50vw;
+  }
+</style>
 
 <script>
   window.addEventListener("load", start);
   function start() {
     hideAllScreens();
     console.log("hallog");
-    document.querySelector("#modern_garden").classList.remove("hide");
-    document.querySelector("#h2_modern").classList.remove("opacity");
-    document.querySelector("#h2_saint").classList.add("opacity");
-    document.querySelector("#h2_copenhagen").classList.add("opacity");
-    document.querySelector("#h2_show").classList.add("opacity");
-    document.querySelector("#h2_saint").addEventListener("click", saint);
-    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
-    document.querySelector("#h2_show").addEventListener("click", show);
+    document.querySelector("#madklub")?.classList.remove("hide");
+    document.querySelector("#madklub-cta")?.classList.add("blue");
+
+    document.querySelector("#hvor-cta")?.classList.remove("blue");
+    document.querySelector("#hvornår-cta")?.classList.remove("blue");
+    document.querySelector("#frivillige-cta")?.classList.remove("blue");
+
+    document.querySelector("#hvor-cta")?.addEventListener("click", hvor);
+    document.querySelector("#hvornår-cta")?.addEventListener("click", hvornår);
+    document.querySelector("#frivillige-cta")?.addEventListener("click", frivillig);
   }
+
   function hideAllScreens() {
     console.log("niuu");
-    document.querySelector("#modern_garden").classList.add("hide");
-    document.querySelector("#st_georges_hill").classList.add("hide");
-    document.querySelector("#copenhagen_garden").classList.add("hide");
-    document.querySelector("#show_garden").classList.add("hide");
+    document.querySelector("#madklub")?.classList.add("hide");
+    document.querySelector("#hvor")?.classList.add("hide");
+    document.querySelector("#hvornår")?.classList.add("hide");
+    document.querySelector("#frivillige")?.classList.add("hide");
   }
-  function saint() {
+
+  function hvor() {
     hideAllScreens();
-    document.querySelector("#st_georges_hill").classList.remove("hide");
-    document.querySelector("#h2_saint").classList.remove("opacity");
-    document.querySelector("#h2_modern").classList.add("opacity");
-    document.querySelector("#h2_copenhagen").classList.add("opacity");
-    document.querySelector("#h2_show").classList.add("opacity");
-    document.querySelector("#h2_modern").addEventListener("click", start);
-    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
-    document.querySelector("#h2_show").addEventListener("click", show);
+    document.querySelector("#hvor")?.classList.remove("hide");
+    document.querySelector("#hvor-cta")?.classList.add("blue");
+
+    document.querySelector("#madklub-cta")?.classList.remove("blue");
+    document.querySelector("#hvornår-cta")?.classList.remove("blue");
+    document.querySelector("#frivillige-cta")?.classList.remove("blue");
+
+    document.querySelector("#madklub-cta")?.addEventListener("click", start);
+    document.querySelector("#hvornår-cta")?.addEventListener("click", hvornår);
+    document.querySelector("#frivillige-cta")?.addEventListener("click", frivillig);
   }
-  function copenhagen() {
+
+  function hvornår() {
     hideAllScreens();
-    document.querySelector("#copenhagen_garden").classList.remove("hide");
-    document.querySelector("#h2_copenhagen").classList.remove("opacity");
-    document.querySelector("#h2_modern").classList.add("opacity");
-    document.querySelector("#h2_saint").classList.add("opacity");
-    document.querySelector("#h2_show").classList.add("opacity");
-    document.querySelector("#h2_modern").addEventListener("click", start);
-    document.querySelector("#h2_saint").addEventListener("click", saint);
-    document.querySelector("#h2_show").addEventListener("click", show);
+    document.querySelector("#hvornår")?.classList.remove("hide");
+    document.querySelector("#hvornår-cta")?.classList.add("blue");
+
+    document.querySelector("#madklub-cta")?.classList.remove("blue");
+    document.querySelector("#hvor-cta")?.classList.remove("blue");
+    document.querySelector("#frivillige-cta")?.classList.remove("blue");
+
+    document.querySelector("#madklub-cta")?.addEventListener("click", start);
+    document.querySelector("#hvor-cta")?.addEventListener("click", hvor);
+    document.querySelector("#frivillige-cta")?.addEventListener("click", frivillig);
   }
-  function show() {
+
+  function frivillig() {
     hideAllScreens();
-    document.querySelector("#show_garden").classList.remove("hide");
-    document.querySelector("#h2_show").classList.remove("opacity");
-    document.querySelector("#h2_modern").classList.add("opacity");
-    document.querySelector("#h2_copenhagen").classList.add("opacity");
-    document.querySelector("#h2_saint").classList.add("opacity");
-    document.querySelector("#h2_modern").addEventListener("click", start);
-    document.querySelector("#h2_saint").addEventListener("click", saint);
-    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
+    document.querySelector("#frivillige")?.classList.remove("hide");
+    document.querySelector("#frivillige-cta")?.classList.add("blue");
+
+    document.querySelector("#madklub-cta")?.classList.remove("blue");
+    document.querySelector("#hvornår-cta")?.classList.remove("blue");
+    document.querySelector("#hvor-cta")?.classList.remove("blue");
+
+    document.querySelector("#madklub-cta")?.addEventListener("click", start);
+    document.querySelector("#hvornår-cta")?.addEventListener("click", hvornår);
+    document.querySelector("#hvor-cta")?.addEventListener("click", hvor);
   }
 </script>
