@@ -24,4 +24,4 @@ pnpm-debug.log*
 .idea/
 
 # weshelter video index
-/public/video/weshelter.mp4
+# /public/video/weshelter.mp4
