@@ -1,0 +1,90 @@
+---
+import Folder from "../components/folder.astro";
+import Cta5 from "../components/cta5.astro";
+---
+
+<article></article>
+<div class="knapper">
+  <Cta5 link="#madklub" button="Madklubben" />
+  <Cta5 link="#hvor" button="Hvor" />
+  <Cta5 link="#hvornår" button="Hvornår" />
+  <Cta5 link="#frivillige" button="Mød de frivillige" />
+</div>
+
+<div class="blue" id="madklub">
+  <Folder
+    overskrift="Hvad er en social madklub"
+    tekst1="Madklubberne findes på vores herberger og væresteder. Her laver frivillige og brugere/beboere i fællesskab lækker og næringsrig mad, der passer til små budgetter."
+    billede="../public/img/folder1.webp"
+  />
+</div>
+<div id="hvor">
+  <Folder overskrift="Hvor er vores madklub arrangementer" tekst1="Vores madklub arrangementer bliver afholdt i vores forskellige væresteder, hvor der bliver afholdt middag på langbord" billede="../public/img/folder2.webp" />
+</div>
+<div class="blue" id="hvornår">
+  <Folder overskrift="Hvornår er der madklub arrangementer?" tekst1="Datoer for arrangementer:" tekst2="21/3 klokken 18-20 Vesterbro" tekst3="28/3 klokken 18-20 Østerbro" tekst4="4/4 klokken 18-20 Nørrebro" billede="../public/img/folder3.webp" />
+</div>
+<div id="frivillige">
+  <Folder
+    overskrift="Vores frivillige fortæller:"
+    tekst1="“Jeg er super glad for at være frivillig i madklubberne, man møder folk i øjenhøjde og får givet et smil eller to med på vejen” - Vivi 54 år"
+    tekst2="“Jeg bor alene og nyder også selv at være en del af madklubberne for det sociale perspektiv” - ole 35 år"
+    billede="../public/img/folder4.webp"
+  />
+</div>
+
+<script>
+  window.addEventListener("load", start);
+  function start() {
+    hideAllScreens();
+    console.log("hallog");
+    document.querySelector("#modern_garden").classList.remove("hide");
+    document.querySelector("#h2_modern").classList.remove("opacity");
+    document.querySelector("#h2_saint").classList.add("opacity");
+    document.querySelector("#h2_copenhagen").classList.add("opacity");
+    document.querySelector("#h2_show").classList.add("opacity");
+    document.querySelector("#h2_saint").addEventListener("click", saint);
+    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
+    document.querySelector("#h2_show").addEventListener("click", show);
+  }
+  function hideAllScreens() {
+    console.log("niuu");
+    document.querySelector("#modern_garden").classList.add("hide");
+    document.querySelector("#st_georges_hill").classList.add("hide");
+    document.querySelector("#copenhagen_garden").classList.add("hide");
+    document.querySelector("#show_garden").classList.add("hide");
+  }
+  function saint() {
+    hideAllScreens();
+    document.querySelector("#st_georges_hill").classList.remove("hide");
+    document.querySelector("#h2_saint").classList.remove("opacity");
+    document.querySelector("#h2_modern").classList.add("opacity");
+    document.querySelector("#h2_copenhagen").classList.add("opacity");
+    document.querySelector("#h2_show").classList.add("opacity");
+    document.querySelector("#h2_modern").addEventListener("click", start);
+    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
+    document.querySelector("#h2_show").addEventListener("click", show);
+  }
+  function copenhagen() {
+    hideAllScreens();
+    document.querySelector("#copenhagen_garden").classList.remove("hide");
+    document.querySelector("#h2_copenhagen").classList.remove("opacity");
+    document.querySelector("#h2_modern").classList.add("opacity");
+    document.querySelector("#h2_saint").classList.add("opacity");
+    document.querySelector("#h2_show").classList.add("opacity");
+    document.querySelector("#h2_modern").addEventListener("click", start);
+    document.querySelector("#h2_saint").addEventListener("click", saint);
+    document.querySelector("#h2_show").addEventListener("click", show);
+  }
+  function show() {
+    hideAllScreens();
+    document.querySelector("#show_garden").classList.remove("hide");
+    document.querySelector("#h2_show").classList.remove("opacity");
+    document.querySelector("#h2_modern").classList.add("opacity");
+    document.querySelector("#h2_copenhagen").classList.add("opacity");
+    document.querySelector("#h2_saint").classList.add("opacity");
+    document.querySelector("#h2_modern").addEventListener("click", start);
+    document.querySelector("#h2_saint").addEventListener("click", saint);
+    document.querySelector("#h2_copenhagen").addEventListener("click", copenhagen);
+  }
+</script>

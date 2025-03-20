@@ -20,6 +20,7 @@ const { overskrift, tekst1, tekst2, tekst3, tekst4, tekst5, billede } = Astro.pr
     margin-right: 2vw;
     padding-top: 3vw;
     padding-bottom: 3vw;
+    z-index: 2;
   }
   img {
     width: 100%;
@@ -27,5 +28,12 @@ const { overskrift, tekst1, tekst2, tekst3, tekst4, tekst5, billede } = Astro.pr
   }
   article {
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 760px) {
+    article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
