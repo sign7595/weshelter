@@ -2,66 +2,65 @@
 const { overskrift, navn1, navn2, navn3, navn4, navn5, navn6, navn7, navn8, navn9, navn10 } = Astro.props;
 
 import Cta2 from "../components/cta2.astro";
-// import Cta3 from "./cta3.astro";
 import Cta3 from "../components/cta3.astro";
 ---
 
 <div class="parent">
-  <article id="vaelg_bidrag">
+  <article id="vaelg_bidrag" class="bidrag_web">
     <h3>{overskrift}</h3>
     <section class="grid">
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn1}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn2}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn3}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn4}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn5}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn6}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn7}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn8}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
 
         <p>{navn9}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
         <p>{navn10}</p>
       </div>
     </section>
     <div class="button">
-      <Cta2 id="knap1" button="NÆSTE" class="next" />
+      <Cta2 id="knap1" button="NÆSTE" />
     </div>
   </article>
 
@@ -75,8 +74,8 @@ import Cta3 from "../components/cta3.astro";
     <input type="text" id="zip" name="zip" required placeholder="Postnummer" />
 
     <div class="checkbox-container">
-      <input type="checkbox" id="friend" name="friend" />
-      <label for="friend">Tilmeld med en ven:</label>
+      <input type="checkbox" id="friend" name="friend" style="width: 20px; height: 20px; margin-left: 0.5vw; margin-right: 3.5vw;" />
+      <label for="friend">Tilmeld med en ven</label>
     </div>
 
     <input type="text" id="friend-name" name="friend-name" placeholder="Navn på din ven" />
@@ -96,27 +95,29 @@ import Cta3 from "../components/cta3.astro";
 <style>
   .parent {
     background-color: #0076f1;
-    height: 600px;
+    height: 650px;
     width: 100%;
+    overflow-x: hidden;
   }
+
   form {
-    border: 1px blue solid;
     background-color: #0076f1;
     color: white;
     display: flex;
     flex-direction: column;
-    padding-inline: 40px;
+    padding-inline: 20px;
     padding-bottom: 2rem;
-    padding-inline-end: 80px;
-    border-left: 1px solid white;
+    padding-inline-end: 800px;
     margin-top: 70px;
+    margin-right: 50px;
+    max-width: 100%;
   }
   input {
     background-color: #0076f1;
   }
 
   input {
-    /* background: none; */
+    background: none;
     border: none;
     outline: none;
     border-bottom: 1.5px solid white;
@@ -124,12 +125,14 @@ import Cta3 from "../components/cta3.astro";
     font-size: 19px;
     padding-top: 40px;
     padding-bottom: 10px;
-    padding-left: 40px;
+    width: 100%;
+    /* padding-left: 40px; */
   }
 
-  /* input::placeholder {
+  input::placeholder {
     color: white;
-  } */
+    width: 100%;
+  }
 
   .checkbox-container {
     display: flex;
@@ -143,13 +146,15 @@ import Cta3 from "../components/cta3.astro";
 
   .button-container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-top: 30px;
+    gap: 40px;
+    justify-content: center;
   }
 
   .parent {
     position: relative;
-    margin-bottom: 150vw;
+    margin-bottom: 20vw;
     background-color: #0076f1;
   }
 
@@ -159,8 +164,11 @@ import Cta3 from "../components/cta3.astro";
     background-color: #0076f1;
     position: absolute;
     width: 100%;
-    height: 100%;
     margin: 0;
+  }
+
+  #takkeside {
+    text-align: center;
   }
 
   article {
@@ -170,10 +178,14 @@ import Cta3 from "../components/cta3.astro";
     padding-bottom: 4vw;
     justify-content: center;
   }
+
+  article p {
+    font-size: 5rem;
+  }
+
   div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* margin-left: 4vw; */
     background-color: #0076f1;
   }
   div p {
@@ -184,10 +196,11 @@ import Cta3 from "../components/cta3.astro";
     margin: auto;
     margin-bottom: 5vw;
     text-align: center;
-    font-size: 3.5vw;
+    font-size: 5vw;
     padding-top: 1rem;
   }
-  button {
+
+  .button {
     text-align: center;
   }
 
@@ -201,47 +214,41 @@ import Cta3 from "../components/cta3.astro";
     visibility: hidden;
   }
 
-  #knap1 {
-    padding-bottom: 10px;
-  }
-
   @media screen and (min-width: 768px) {
-    article {
+    /* article {
       padding-top: 1.8vw;
       padding-bottom: 4vw;
       justify-content: center;
-    }
-    div {
+    } */
+
+    /* div {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       margin-left: 4vw;
       padding-top: 0rem;
-    }
-    div p {
-      /* grid-column: 2 / span 3; */
+    } */
+
+    /* div p {
       font-size: 1.2vw;
-    }
-    h3 {
+    } */
+
+    /* h3 {
       margin: auto;
       margin-bottom: 0.5vw;
       text-align: center;
       font-size: 1.9vw;
       padding-top: 1rem;
-      /* display: none; */
-    }
-    button {
+    } */
+
+    .button {
       text-align: center;
     }
 
     .button {
       display: flex;
       justify-content: center;
-      padding-top: 2rem;
+      /* padding-top: 0.5rem; */
       /* display: none; */
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
     }
   }
   @media (min-width: 760px) {
@@ -252,19 +259,43 @@ import Cta3 from "../components/cta3.astro";
 
   @media screen and (min-width: 768px) {
     form {
-      max-width: 500px;
-      /* padding-top: 3rem; */
+      /* max-width: 500px; */
       padding-bottom: 0rem;
+      display: block;
     }
 
-    .button-container {
-      display: none;
+    #personlig_data {
+      padding: 0;
+      padding-left: 30px;
+      padding-right: 150px;
+    }
+
+    .parent {
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #vaelg_bidrag h3 {
+      font-size: 2vw;
+      margin-top: 20px;
+    }
+
+    #vaelg_bidrag {
+      padding: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.5fr 1fr;
     }
   }
 </style>
 
 <script>
   window.addEventListener("load", start);
+
   const bidrag = document.querySelector("#vaelg_bidrag");
   const data = document.querySelector("#personlig_data");
   const takkeside = document.querySelector("#takkeside");
