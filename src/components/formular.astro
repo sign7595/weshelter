@@ -1,81 +1,168 @@
 ---
-const {
-  overskrift,
-  navn1,
-  navn2,
-  navn3,
-  navn4,
-  navn5,
-  navn6,
-  navn7,
-  navn8,
-  navn9,
-  navn10,
-} = Astro.props;
+const { overskrift, navn1, navn2, navn3, navn4, navn5, navn6, navn7, navn8, navn9, navn10 } = Astro.props;
 
 import Cta2 from "../components/cta2.astro";
-import Klikboks from "../components/klikboks.astro";
+// import Cta3 from "./cta3.astro";
+import Cta3 from "../components/cta3.astro";
 ---
 
-<article>
-  <h3>{overskrift}</h3>
-  <section class="grid">
-    <div>
-      <Klikboks />
+<div class="parent">
+  <article id="vaelg_bidrag">
+    <h3>{overskrift}</h3>
+    <section class="grid">
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn1}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn1}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn2}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn2}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn3}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn3}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn4}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn4}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn5}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn5}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn6}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn6}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn7}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn7}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn8}</p>
-    </div>
-    <div>
-      <Klikboks />
+        <p>{navn8}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
 
-      <p>{navn9}</p>
+        <p>{navn9}</p>
+      </div>
+      <div>
+        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 4.5vw; margin-top: 1.95vw;" />
+        <p>{navn10}</p>
+      </div>
+    </section>
+    <div class="button">
+      <Cta2 id="knap1" button="NÆSTE" class="next" />
     </div>
-    <div>
-      <Klikboks />
-      <p>{navn10}</p>
+  </article>
+
+  <form id="personlig_data">
+    <input type="text" id="name" name="name" required placeholder="Fulde navn" />
+
+    <input type="tel" id="phone" name="phone" required placeholder="Telefonnummer" />
+
+    <input type="email" id="email" name="email" required placeholder="Email" />
+
+    <input type="text" id="zip" name="zip" required placeholder="Postnummer" />
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="friend" name="friend" />
+      <label for="friend">Tilmeld med en ven:</label>
     </div>
-  </section>
-  <!-- <div class="button">
-    <Cta2 button="INDSEND" class="next" />
-  </div> -->
-</article>
+
+    <input type="text" id="friend-name" name="friend-name" placeholder="Navn på din ven" />
+
+    <div class="button-container">
+      <Cta3 id="knap_tilbage" button="TILBAGE" type="button" class="back" />
+      <Cta2 id="knap_indsend" button="INDSEND" type="submit" class="submit" />
+    </div>
+  </form>
+
+  <article id="takkeside">
+    <h2>Tak for dit indput</h2>
+    <p>Vi glæder os til at se dig gøre en forskel!</p>
+  </article>
+</div>
 
 <style>
+  .parent {
+    background-color: #0076f1;
+    height: 600px;
+    width: 100%;
+  }
+  form {
+    border: 1px blue solid;
+    background-color: #0076f1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 40px;
+    padding-bottom: 2rem;
+    padding-inline-end: 80px;
+    border-left: 1px solid white;
+    margin-top: 70px;
+  }
+  input {
+    background-color: #0076f1;
+  }
+
+  input {
+    /* background: none; */
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid white;
+    color: white;
+    font-size: 19px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+  }
+
+  /* input::placeholder {
+    color: white;
+  } */
+
+  .checkbox-container {
+    display: flex;
+    margin-top: 70px;
+    font-size: 19px;
+  }
+
+  .checkbox-container input {
+    margin-right: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .parent {
+    position: relative;
+    margin-bottom: 150vw;
+    background-color: #0076f1;
+  }
+
+  #vaelg_bidrag,
+  #personlig_data,
+  #takkeside {
+    background-color: #0076f1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
   article {
     background-color: #0076f1;
     color: white;
@@ -86,7 +173,8 @@ import Klikboks from "../components/klikboks.astro";
   div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-left: 4vw;
+    /* margin-left: 4vw; */
+    background-color: #0076f1;
   }
   div p {
     grid-column: 2 / span 3;
@@ -107,6 +195,14 @@ import Klikboks from "../components/klikboks.astro";
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+  }
+
+  .hide {
+    visibility: hidden;
+  }
+
+  #knap1 {
+    padding-bottom: 10px;
   }
 
   @media screen and (min-width: 768px) {
@@ -153,4 +249,55 @@ import Klikboks from "../components/klikboks.astro";
       font-size: 1.6vw;
     }
   }
+
+  @media screen and (min-width: 768px) {
+    form {
+      max-width: 500px;
+      /* padding-top: 3rem; */
+      padding-bottom: 0rem;
+    }
+
+    .button-container {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  window.addEventListener("load", start);
+  const bidrag = document.querySelector("#vaelg_bidrag");
+  const data = document.querySelector("#personlig_data");
+  const takkeside = document.querySelector("#takkeside");
+  const knap1 = document.querySelector("#knap1");
+  const knap_tilbage = document.querySelector("#knap_tilbage");
+  const knap_indsend = document.querySelector("#knap_indsend");
+
+  function start() {
+    hideAllScreens();
+    console.log("hallog");
+    bidrag?.classList.remove("hide");
+    knap1?.addEventListener("click", side2);
+  }
+
+  function hideAllScreens() {
+    console.log("niuu");
+    bidrag?.classList.add("hide");
+    data?.classList.add("hide");
+    takkeside?.classList.add("hide");
+  }
+
+  function side2() {
+    console.log("side2");
+    hideAllScreens();
+    bidrag?.classList.add("hide");
+    data?.classList.remove("hide");
+    knap_tilbage?.addEventListener("click", start);
+    knap_indsend?.addEventListener("click", tak);
+  }
+
+  function tak() {
+    hideAllScreens();
+    data?.classList.add("hide");
+    takkeside?.classList.remove("hide");
+  }
+</script>
