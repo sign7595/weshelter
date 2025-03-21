@@ -209,11 +209,11 @@ import Cta3 from "../components/cta3.astro";
   }
 
   .button-container {
-    display: flex;
+    /* display: flex; */
     /* justify-content: space-between; */
     margin-top: 30px;
     gap: 40px;
-    justify-content: center;
+    /* justify-content: center; */
   }
 
   .parent {
@@ -322,6 +322,13 @@ import Cta3 from "../components/cta3.astro";
   @media (min-width: 760px) {
     div p {
       font-size: 1.6vw;
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 40px;
+      justify-content: center;
     }
   }
 
