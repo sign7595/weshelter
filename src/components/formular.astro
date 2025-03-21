@@ -1,5 +1,17 @@
 ---
-const { overskrift, navn1, navn2, navn3, navn4, navn5, navn6, navn7, navn8, navn9, navn10 } = Astro.props;
+const {
+  overskrift,
+  navn1,
+  navn2,
+  navn3,
+  navn4,
+  navn5,
+  navn6,
+  navn7,
+  navn8,
+  navn9,
+  navn10,
+} = Astro.props;
 
 import Cta2 from "../components/cta2.astro";
 import Cta3 from "../components/cta3.astro";
@@ -10,52 +22,82 @@ import Cta3 from "../components/cta3.astro";
     <h3>{overskrift}</h3>
     <section class="grid">
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn1}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn2}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn3}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn4}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn5}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn6}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn7}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn8}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
 
         <p>{navn9}</p>
       </div>
       <div>
-        <input type="checkbox" style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;" />
+        <input
+          type="checkbox"
+          style="width: 20px; height: 20px; margin-left: 9.5vw; margin-top: 1.95vw;"
+        />
         <p>{navn10}</p>
       </div>
     </section>
@@ -65,20 +107,42 @@ import Cta3 from "../components/cta3.astro";
   </article>
 
   <form id="personlig_data">
-    <input type="text" id="name" name="name" required placeholder="Fulde navn" />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder="Fulde navn"
+    />
 
-    <input type="tel" id="phone" name="phone" required placeholder="Telefonnummer" />
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      required
+      placeholder="Telefonnummer"
+    />
 
     <input type="email" id="email" name="email" required placeholder="Email" />
 
     <input type="text" id="zip" name="zip" required placeholder="Postnummer" />
 
     <div class="checkbox-container">
-      <input type="checkbox" id="friend" name="friend" style="width: 20px; height: 20px; margin-left: 0.5vw; margin-right: 3.5vw;" />
+      <input
+        type="checkbox"
+        id="friend"
+        name="friend"
+        style="width: 20px; height: 20px; margin-left: 0.5vw; margin-right: 3.5vw;"
+      />
       <label for="friend">Tilmeld med en ven</label>
     </div>
 
-    <input type="text" id="friend-name" name="friend-name" placeholder="Navn på din ven" />
+    <input
+      type="text"
+      id="friend-name"
+      name="friend-name"
+      placeholder="Navn på din ven"
+    />
 
     <div class="button-container">
       <Cta3 id="knap_tilbage" button="TILBAGE" type="button" class="back" />
@@ -125,7 +189,7 @@ import Cta3 from "../components/cta3.astro";
     font-size: 19px;
     padding-top: 40px;
     padding-bottom: 10px;
-    width: 100%;
+    width: 90%;
     /* padding-left: 40px; */
   }
 
